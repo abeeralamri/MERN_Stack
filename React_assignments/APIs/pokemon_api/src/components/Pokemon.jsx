@@ -5,12 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Pokemon = props =>{
     const [pokeDex, setPokeDex] = useState([])
     
-    useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/pokemon")
-            .then( res => res.json())
-            .then( res => setPokeDex(res.results))
-            .catch( err => console.log(err))
-    }, []);
 
     const PokemonFetch = e =>{
         e.preventDefault();
