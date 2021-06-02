@@ -7,8 +7,8 @@ import {navigate} from '@reach/router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Search = props =>{
-    const [Catigories, setCatigories] = useState("")
-    const [ID, setID] = useState()
+    const [Catigories, setCatigories] = useState("people")
+    const [ID, setID] = useState(0)
 
 
   
