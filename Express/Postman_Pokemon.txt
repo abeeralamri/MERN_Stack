@@ -1,0 +1,9 @@
+https://pokeapi.co/api/v2/pokemon/ivysaur
+
+https://pokeapi.co/api/v2/pokemon/800
+
+https://pokeapi.co/api/v2/pokemon/butterfree
+
+https://pokeapi.co/api/v2/pokemon/kakuna
+
+https://pokeapi.co/api/v2/pokemon/500
