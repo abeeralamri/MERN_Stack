@@ -29,11 +29,13 @@ class Company{
     
     }
 }
-const new_user =  new User()
+const new_user =  new User(); // new user
 app.get("/api/users/new", (req, res) => {
     res.json(new_user);
 });
 
+
+const new_company =  new Company(); // new company
 app.get("/api/companies/new", (req, res) => {
     res.json(new Company);
 });
