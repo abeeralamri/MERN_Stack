@@ -1,0 +1,53 @@
+use my_first_db
+
+db.createCollection("students")
+
+db.students.insert({name: "Abeer", home_state: "Madinah", lucky_number:12358, birth_day :{month:12, day:4,year:1997}})
+
+db.students.insert({name: "Lama", home_state: "Jeddah", lucky_number:5, birth_day :{month:8, day:4,year:1997} })
+
+db.students.insert({name: "Raghad", home_state: "Yanbu", lucky_number:56, birth_day :{month:9, day:8,year:1996} })
+
+db.students.insert({name: "Manal", home_state: "Riyadh", lucky_number:10, birth_day :{month:10, day:10,year:1990} })
+
+db.students.insert({name: "Tahani", home_state: "Abha", lucky_number:88, birth_day :{month:5, day:11,year:1989} })
+
+db.students.find().pretty()
+
+db.students.find( {$or : [{home_state : "California"}, {home_state:"Washington"}]}).pretty()
+
+db.students.find({lucky_number : {$gt:3} }).pretty()
+
+db.students.find({lucky_number : {$lte:10} }).pretty()
+
+db.students.find({ lucky_number : { $gt : 1, $lt : 10}}).pretty()
+
+db.students.updateMany({}, {$set: {interests: ['coding', 'brunch', 'MongoDB']}})
+
+db.students.update({name: "Abeer"}, {$addToSet: {interests : "Eating a nuts"} })
+
+db.students.update({name: "Lama"}, {$addToSet: {interests : "Shopping"} })
+
+db.students.update({name: "Raghad"}, {$addToSet: {interests : "Watch TV"} })
+
+db.students.update({name: "Manal"}, {$addToSet: {interests : "Trevelling"} })
+
+db.students.update({name: "Tahani"}, {$addToSet: {interests : "Writing"} })
+
+db.students.update({name: "Tahani"}, {$addToSet: {interests : "taxes"} })
+
+db.students.update({name: "Tahani"}, {$pull: {interests : "taxes"} })
+
+db.students.remove({home_state : 'California'})
+
+db.students.remove({name : 'Manal'})
+
+db.students.updateMany({}, {$set : {"number_of_belts" : 0} })
+
+db.students.updateMany({home_state : "Washington"}, {$inc : {"number_of_belts" : 1} })
+
+db.students.updateMany({}, {$rename : {"number_of_belts" : "belts_earned"} })
+
+db.students.updateMany({}, {$unset : {"lucky_number" : ''} })
+
+db.students.updateMany({}, {$currentDate: {updated_on: true }})
