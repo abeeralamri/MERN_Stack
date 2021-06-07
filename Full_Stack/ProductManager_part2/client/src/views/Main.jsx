@@ -4,12 +4,12 @@ import ProductList from '../components/ProductList';
 import axios from 'axios';
 import Detail from './Detail';
 const Main = () => {
-    const [product, setPeople] = useState([]);
+    const [product, setProduct] = useState([]);
     const [loaded, setLoaded] = useState(false);
     useEffect(()=>{
         axios.get('http://localhost:8000/api/product')
             .then(res=>{
-                setPeople(res.data);
+                setProduct(res.data);
                 setLoaded(true);
             });
     },[])
