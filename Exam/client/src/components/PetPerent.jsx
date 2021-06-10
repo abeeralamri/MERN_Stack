@@ -5,8 +5,8 @@ import React, {useEffect, useState} from 'react';
 
 
 const PetPerent = () => {
-    
     const [pets, setPets] = useState([]);
+
     useEffect(() => {
         axios.get("http://localhost:8000/")
         .then(res=> setPets(res.data))
@@ -14,7 +14,7 @@ const PetPerent = () => {
     }, [])
  
 
-   
+
 return(
     <div>
       <div style = {{display : "flex", marginLeft: "600px", marginTop : "30px"}}>
@@ -33,7 +33,7 @@ return(
                         <td>Actions</td>
                     </tr>
                 {
-                    pets.map((pet, idx)=>{
+                    pets.sort((pet, idx)=> (pet.PetType > idx.PetType) ? 1 : -1).map((pet, idx)=>{
                         return(
                             <tr key={idx}>
                                 <td>
